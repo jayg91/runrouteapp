@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy for RunRoute</title>
+  <meta name="description" content="Privacy Policy for the RunRoute iOS app." />
+
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --surface: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.10);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.68);
+      --muted2: rgba(255,255,255,0.55);
+      --link: #7dd3fc;
+      --accent: #34d399;
+      --shadow: 0 18px 50px rgba(0,0,0,0.45);
+      --radius: 16px;
+      --max: 980px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f7f8fb;
+        --surface: #ffffff;
+        --border: rgba(2,6,23,0.10);
+        --text: rgba(2,6,23,0.92);
+        --muted: rgba(2,6,23,0.70);
+        --muted2: rgba(2,6,23,0.55);
+        --link: #0ea5e9;
+        --accent: #16a34a;
+        --shadow: 0 18px 50px rgba(2,6,23,0.10);
+      }
+    }
+
+    *{ box-sizing: border-box; }
+    html, body{ height: 100%; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(900px 520px at 20% -10%, rgba(52,211,153,0.22), transparent 60%),
+        radial-gradient(720px 520px at 90% 0%, rgba(125,211,252,0.18), transparent 55%),
+        radial-gradient(700px 500px at 70% 110%, rgba(59,130,246,0.14), transparent 55%),
+        var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a{ color: var(--link); text-decoration: none; text-underline-offset: 3px; }
+    a:hover{ text-decoration: underline; }
+
+    .skip-link{
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    .skip-link:focus{ left: 12px; z-index: 10; }
+
+    .container{ max-width: var(--max); margin: 0 auto; padding: 0 18px; }
+
+    header{ padding: 44px 0 18px; }
+    .hero{
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 22px;
+      backdrop-filter: blur(10px);
+    }
+    .kicker{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 10px;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+    .dot{
+      width: 9px; height: 9px; border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(52,211,153,0.14);
+    }
+    h1{
+      font-size: clamp(26px, 4vw, 36px);
+      line-height: 1.15;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+    .meta{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (min-width: 560px){
+      .meta{ grid-template-columns: auto auto; gap: 18px; }
+    }
+    .meta strong{ color: var(--text); font-weight: 600; }
+
+    main{ padding: 18px 0 44px; }
+
+    .layout{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    @media (min-width: 920px){
+      .layout{ grid-template-columns: 1fr 290px; align-items: start; }
+      .toc{ position: sticky; top: 18px; }
+    }
+
+    section, .toc{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      padding: 20px;
+      backdrop-filter: blur(10px);
+    }
+    section + section{ margin-top: 16px; }
+
+    h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    h3{
+      margin: 14px 0 8px;
+      font-size: 15px;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+    p{ margin: 10px 0; }
+    .muted{ color: var(--muted); }
+    .muted2{ color: var(--muted2); }
+
+    ul, ol{ margin: 10px 0 0 18px; padding: 0; }
+    li{ margin: 6px 0; }
+
+    .callout{
+      border-left: 4px solid var(--accent);
+      padding: 12px 14px;
+      background: rgba(52,211,153,0.10);
+      border-radius: 12px;
+      margin-top: 12px;
+    }
+
+    code{
+      font-family: var(--mono);
+      font-size: 0.95em;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 1px 6px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    @media (prefers-color-scheme: light){
+      code{
+        background: rgba(2,6,23,0.06);
+        border: 1px solid rgba(2,6,23,0.10);
+      }
+    }
+
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    th, td{
+      text-align: left;
+      padding: 12px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+    th{
+      font-size: 13px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.06);
+      letter-spacing: 0.02em;
+    }
+    tr:last-child td{ border-bottom: none; }
+
+    .toc h4{
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .toc ol{ margin: 0; padding-left: 18px; color: var(--muted); }
+    .toc li{ margin: 8px 0; }
+    .toc a{ color: var(--text); }
+    .toc a:hover{ color: var(--link); text-decoration: none; }
+
+    footer{
+      padding: 0 0 40px;
+      color: var(--muted2);
+      font-size: 13px;
+    }
+    .footer-card{
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{ scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header>
+    <div class="container">
+      <div class="hero">
+        <p class="kicker"><span class="dot" aria-hidden="true"></span> RunRoute • Privacy Policy</p>
+        <h1>Privacy Policy for RunRoute</h1>
+        <div class="meta" role="list">
+          <div role="listitem"><strong>Last updated:</strong> February 2025</div>
+          <div role="listitem"><strong>Effective date:</strong> February 2025</div>
+        </div>
+        <p class="muted" style="margin-top:12px;">
+          RunRoute (“we,” “our,” or “the app”) is a route-planning app for iOS. This Privacy Policy describes how we handle
+          information when you use the app. RunRoute is developed by Juan Guerrero.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="container layout">
+      <div>
+        <section id="summary">
+          <h2>1. Summary</h2>
+          <ul>
+            <li>We do <strong>not</strong> require an account to use RunRoute.</li>
+            <li>We do <strong>not</strong> sell your personal data.</li>
+            <li><strong>Location</strong> is used only when the app is in use, to show your position on the map and to plan routes.</li>
+            <li><strong>Saved routes</strong> are stored only on your device.</li>
+            <li>
+              When you use <strong>“Snap to roads”</strong> or <strong>search</strong>, some data may be sent to <strong>Apple</strong>
+              and to the <strong>Open-Elevation</strong> service as described below.
+            </li>
+          </ul>
+        </section>
+
+        <section id="collection">
+          <h2>2. Information We Collect and How We Use It</h2>
+
+          <h3 id="location">2.1 Location (when in use)</h3>
+          <ul>
+            <li><strong>What:</strong> Your device’s location while you use the app (e.g. to show your position on the map).</li>
+            <li><strong>Why:</strong> To display your position and to help you plan and follow routes.</li>
+            <li><strong>How long:</strong> We do not store your location on any server. Location is used in real time by the app and by Apple’s map services as needed.</li>
+          </ul>
+
+          <h3 id="saved-routes">2.2 Saved routes (on your device only)</h3>
+          <ul>
+            <li><strong>What:</strong> Routes you create and save (waypoints, snapped path, distance, elevation, and any name you give the route).</li>
+            <li><strong>Why:</strong> So you can view and reuse your routes in the app.</li>
+            <li><strong>Where:</strong> This data is stored only on your iPhone or iPad (using the device’s local storage). We do not upload or store your routes on our servers.</li>
+          </ul>
+
+          <h3 id="search">2.3 Search and map features</h3>
+          <ul>
+            <li><strong>What:</strong> When you use the search bar, the text you type and the fact that you are searching may be sent to <strong>Apple’s MapKit / Apple Maps</strong> to return places and addresses.</li>
+            <li><strong>Why:</strong> To provide search and map functionality.</li>
+            <li><strong>Who handles it:</strong> Apple. Their privacy policy applies to that data: <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple Privacy Policy</a>.</li>
+          </ul>
+
+          <h3 id="elevation">2.4 Elevation data (“Snap to roads”)</h3>
+          <ul>
+            <li><strong>What:</strong> When you tap <strong>“Snap to roads,”</strong> the app sends <strong>coordinates along your route</strong> (latitude and longitude only, no names or identifiers) to the <strong>Open-Elevation</strong> service to get elevation data.</li>
+            <li><strong>Why:</strong> To show elevation gain and the elevation profile for your route.</li>
+            <li>
+              <strong>Who handles it:</strong> The Open-Elevation API (<a href="https://open-elevation.com/" target="_blank" rel="noopener noreferrer">open-elevation.com</a>).
+              We do not control their servers or their data practices. Only geographic coordinates are sent; we do not send your name,
+              Apple ID, or other account information.
+            </li>
+          </ul>
+        </section>
+
+        <section id="not-collected">
+          <h2>3. Data We Do Not Collect</h2>
+          <p>We do <strong>not</strong> collect:</p>
+          <ul>
+            <li>Name, email, or other account information (the app has no sign-in).</li>
+            <li>Contacts, photos, or other data from your device except as described above.</li>
+            <li>Any data for advertising or analytics beyond what Apple may collect (e.g. through App Store or system services).</li>
+          </ul>
+        </section>
+
+        <section id="third-parties">
+          <h2>4. Third-Party Services</h2>
+          <table aria-label="Third-party services">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Purpose</th>
+                <th>What may be sent</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Apple MapKit</strong></td>
+                <td>Maps, search, directions</td>
+                <td>Search queries, map usage</td>
+              </tr>
+              <tr>
+                <td><strong>Open-Elevation</strong></td>
+                <td>Elevation for your route</td>
+                <td>Route coordinates only</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="muted">
+            Each of these services has its own privacy practices. We encourage you to review Apple’s and Open-Elevation’s policies.
+          </p>
+        </section>
+
+        <section id="retention">
+          <h2>5. Data Retention and Deletion</h2>
+          <ul>
+            <li><strong>Location:</strong> Not stored by us; used only during your session.</li>
+            <li><strong>Saved routes:</strong> Stored on your device until you delete them in the app or remove the app. We have no copy of this data.</li>
+            <li><strong>Coordinates sent to Open-Elevation:</strong> We do not store those on our servers. Open-Elevation’s retention is governed by their own policy.</li>
+          </ul>
+        </section>
+
+        <section id="children">
+          <h2>6. Children’s Privacy</h2>
+          <p>
+            RunRoute is not directed at children under 13. We do not knowingly collect personal information from children.
+            If you believe a child has provided information through the app, please contact us and we will work to address it.
+          </p>
+        </section>
+
+        <section id="rights">
+          <h2>7. Your Rights and Choices</h2>
+          <ul>
+            <li><strong>Location:</strong> You can revoke location access at any time in <strong>Settings → Privacy &amp; Security → Location Services → RunRoute</strong>.</li>
+            <li><strong>Saved routes:</strong> You can delete individual routes in the app or remove the app to delete all local data.</li>
+            <li><strong>No account:</strong> Because we don’t have user accounts, there is no “account data” we can provide or delete on a server. All stored data is on your device.</li>
+          </ul>
+          <p class="muted">
+            If you are in the European Economic Area or another region with specific privacy rights, you may have additional rights
+            (e.g. access, correction, deletion). Contact us using the details below; we will respond in line with applicable law.
+          </p>
+        </section>
+
+        <section id="changes">
+          <h2>8. Changes to This Privacy Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time. The “Last updated” date at the top will change when we do.
+            Continued use of the app after changes means you accept the updated policy. For material changes, we may provide notice
+            in the app or via the App Store listing.
+          </p>
+        </section>
+
+        <section id="contact">
+          <h2>9. Contact Us</h2>
+          <p>If you have questions about this Privacy Policy or RunRoute’s data practices, you can contact us at:</p>
+
+          <div class="callout">
+            <p style="margin:0 0 6px;"><strong>Juan Guerrero</strong></p>
+            <p style="margin:0 0 6px;">Email: <a href="mailto:runrouteapp@gmail.com">runrouteapp@gmail.com</a></p>
+          </div>
+        </section>
+      </div>
+
+      <aside class="toc" aria-label="Table of contents">
+        <h4>On this page</h4>
+        <ol>
+          <li><a href="#summary">Summary</a></li>
+          <li><a href="#collection">Information we collect</a></li>
+          <li><a href="#not-collected">Data we do not collect</a></li>
+          <li><a href="#third-parties">Third-party services</a></li>
+          <li><a href="#retention">Retention &amp; deletion</a></li>
+          <li><a href="#children">Children’s privacy</a></li>
+          <li><a href="#rights">Rights &amp; choices</a></li>
+          <li><a href="#changes">Changes</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+        <p class="muted" style="margin-top:12px;">
+          Tip: Host this as a public URL (GitHub Pages, your website, etc.) and paste the link into App Store Connect.
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-card">
+      <p style="margin:0;">
+        © <span id="year"></span> RunRoute. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Set footer year automatically.
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
